@@ -29,4 +29,4 @@ app.get("/posts3", function (req, res) {
   res.send("You sent a request for " + city + ", " + state);
 });
 
-app.listen(80);
+app.listen(process.env.PORT || 3000);
