@@ -17,7 +17,18 @@ app.get('/posts2', function (req, res) {
   res.json({ "msg" : "Hello world!" });  
 });
 
+//params
+//Route path: /states/:state/cities/:city
+//Request URL: http://node1.tomkrok1.repl.co/states/wa/cities/Seattle
+//req.params: { "state": "wa", "city": "Seattle" }
+app.get("/states/:state/cities/:city", function (req, res) {
+res.type("text");
+res.send("You sent a request for " + req.params.city + ", "
++ req.params.state);
+});
 
+
+//query
 //Route path: /posts3
 //Request URL: https://node1.tomkrok1.repl.co/posts3?state=wa&city=Seattle
 //req.query: { "state": "wa", "city": "Seattle" }
